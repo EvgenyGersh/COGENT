@@ -1,0 +1,31 @@
+@mixin less_1200 {
+  @media (width < 1200px) {
+    @content;
+  }
+}
+
+@mixin less_992 {
+  @media (width < 992px) {
+    @content;
+  }
+}
+
+@mixin less_610 {
+  @media (width < 610px) {
+    @content;
+  }
+}
+
+@mixin I_pad {
+  @media (width < 1024px) and (height > 1366px) {
+    @content;
+  }
+}
+
+// -------- example --------
+// .top_nav_links {
+//   display: flex;
+//   @include less_610 {
+//     display: none;
+//   }
+// }

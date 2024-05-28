@@ -1,0 +1,8 @@
+.prettierignore
+yarn.lock
+dist
+.gitignore
+*.svg
+fonts
+.dockerignore
+*.png
