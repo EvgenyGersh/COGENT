@@ -1,15 +1,480 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VITE_PROJECT</title>
-    
-    
-    <link rel="stylesheet" href="./src/styles/main.scss" />
-  </head>
-  <body>
-     
-    <script type="module" defer src="./src/js/main.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>COGENT</title>
+		<link rel="stylesheet" href="./styles/utils/normalize.css" />
+		<link rel="stylesheet" href="./styles/utils/reset.css" />
+		<link rel="stylesheet" href="./styles/main.css" />
+	</head>
+	<body>
+		<div class="content_wrap">
+			<header>
+				<div class="logo">
+					<a href="#">
+						<img src="./assets/icons/Logos.svg" alt="COGENT" />
+					</a>
+				</div>
+				<nav class="header_nav">
+					<ul class="header_links">
+						<li class="header_link">
+							<a href="#">Solutions</a>
+						</li>
+						<li class="header_link">
+							<a href="#">Integrations</a>
+						</li>
+						<li class="header_link">
+							<a href="#">Resources</a>
+						</li>
+						<li class="header_link">
+							<a href="#">Pricing</a>
+						</li>
+						<li class="header_link">
+							<a href="#">Company</a>
+						</li>
+					</ul>
+				</nav>
+				<a class="sign_link" href="#">
+					<span>Login</span>
+					<img src="./assets/icons/sign-up.svg" alt="Sign up" />
+				</a>
+				<button class="header_btn btn">
+					<span>Start for free</span>
+					<img src="./assets/icons/Arrows-Right.svg" alt="Arrows-Right" />
+				</button>
+			</header>
+			<section class="main flex_column">
+				<h1>
+					Lorem ipsum dolor sit amet consectetur. Vestibulum iaculis tortor.
+				</h1>
+				<p class="description main_descr">
+					Explore thousands of free and paid gears to jump-start your next big
+					idea.
+				</p>
+				<div class="progress_items">
+					<div class="progress_item flex_column">
+						<div class="item_quantity">50+</div>
+						<div class="item_name">Universities</div>
+					</div>
+					<div class="progress_item flex_column">
+						<div class="item_quantity">200+</div>
+						<div class="item_name">Professors</div>
+					</div>
+					<div class="progress_item flex_column">
+						<div class="item_quantity">1500+</div>
+						<div class="item_name">Students</div>
+					</div>
+					<div class="progress_item flex_column">
+						<div class="item_quantity">5000+</div>
+						<div class="item_name">Cogs created</div>
+					</div>
+				</div>
+				<div class="video_container">
+					<video
+						poster="assets/image/video-poster.png"
+						class="video-player"
+						id="video-player"
+						preload="metadata"
+					>
+						<source src="" type="video/mp4" />
+					</video>
+				</div>
+			</section>
+			<section class="advantages flex_column">
+				<div class="avatar_wrap">
+					<img src="assets/image/Avatar.png" alt="photo" />
+				</div>
+				<p class="advantages_text">
+					“Cogent is an incredibly flexible product, you can build anything on
+					it. It gives you the tools you need to build any educational content
+					you can ever imagine.”
+				</p>
+				<span class="description advantages_span">Marin Njavro</span>
+				<p class="description">Co-Founder at Luxembourg School of Business</p>
+			</section>
+			<section class="tabs flex_column">
+				<div class="tabs_wrap flex_column">
+					<div class="tab_links">
+						<div class="tab_link tab_link_active">
+							<div class="link_header">
+								<div class="link_icon">
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clip-path="url(#clip0_184_1407)">
+											<path
+												d="M1.52741 10.9751C1.63307 12.4273 2.42738 13.5954 3.4145 13.7572C4.1477 13.8774 4.90049 13.9806 5.66803 13.9806C6.43557 13.9806 7.18836 13.8774 7.92156 13.7572C8.90868 13.5954 9.70298 12.4273 9.80865 10.9751C9.88665 9.90298 9.95251 8.80229 9.95251 7.68015C9.95251 6.558 9.88665 5.45732 9.80865 4.38522C9.70298 2.93293 8.90866 1.76487 7.92156 1.60307C7.18836 1.48289 6.43557 1.37967 5.66803 1.37967C4.90049 1.37967 4.1477 1.48289 3.4145 1.60307C2.42738 1.76487 1.63307 2.93293 1.52741 4.38522C1.44941 5.45732 1.38354 6.558 1.38354 7.68015C1.38354 8.80229 1.44941 9.90298 1.52741 10.9751Z"
+												fill="white"
+												fill-opacity="0.05"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+											/>
+											<path
+												d="M22.5095 13.0944C22.4037 11.6431 21.6076 10.4757 20.6183 10.314C19.8834 10.1939 19.1289 10.0908 18.3597 10.0908C17.5905 10.0908 16.836 10.1939 16.1011 10.314C15.1118 10.4757 14.3158 11.6431 14.2099 13.0944C14.1317 14.1658 14.0657 15.2658 14.0657 16.3872C14.0657 17.5087 14.1317 18.6086 14.2099 19.68C14.3158 21.1313 15.1118 22.2987 16.1011 22.4604C16.836 22.5804 17.5905 22.6836 18.3597 22.6836C19.1289 22.6836 19.8834 22.5804 20.6183 22.4604C21.6076 22.2987 22.4037 21.1313 22.5095 19.68C22.5877 18.6086 22.6538 17.5087 22.6538 16.3872C22.6538 15.2658 22.5877 14.1658 22.5095 13.0944Z"
+												fill="white"
+												fill-opacity="0.05"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+											/>
+											<path
+												d="M1.52741 21.5976C1.63307 22.1224 2.42738 22.5444 3.4145 22.6029C4.1477 22.6464 4.90049 22.6836 5.66803 22.6836C6.43555 22.6836 7.18836 22.6464 7.92156 22.6029C8.90866 22.5444 9.70298 22.1224 9.80865 21.5976C9.88665 21.2102 9.95251 20.8123 9.95251 20.4069C9.95251 20.0013 9.88665 19.6036 9.80865 19.2161C9.70298 18.6914 8.90866 18.2693 7.92156 18.2109C7.18836 18.1673 6.43555 18.1301 5.66803 18.1301C4.90049 18.1301 4.1477 18.1673 3.4145 18.2109C2.42738 18.2693 1.63307 18.6914 1.52741 19.2161C1.44941 19.6036 1.38354 20.0013 1.38354 20.4069C1.38354 20.8123 1.44941 21.2102 1.52741 21.5976Z"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+											/>
+											<path
+												d="M22.5095 2.46577C22.4037 1.94096 21.6076 1.51887 20.6183 1.4604C19.8834 1.41697 19.1289 1.37967 18.3597 1.37967C17.5905 1.37967 16.836 1.41697 16.1011 1.4604C15.1118 1.51887 14.3158 1.94096 14.2099 2.46577C14.1317 2.8532 14.0657 3.25095 14.0657 3.65645C14.0657 4.06196 14.1317 4.45971 14.2099 4.84714C14.3158 5.37193 15.1118 5.79404 16.1011 5.85252C16.836 5.89594 17.5905 5.93324 18.3597 5.93324C19.1289 5.93324 19.8834 5.89594 20.6183 5.85252C21.6076 5.79404 22.4037 5.37193 22.5095 4.84714C22.5877 4.45971 22.6538 4.06196 22.6538 3.65645C22.6538 3.25095 22.5877 2.8532 22.5095 2.46577Z"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_184_1407">
+												<rect width="24" height="24" fill="white" />
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="link_title">Create</div>
+							</div>
+							<div class="link_description">
+								Build your unique content with powerful, flexible templates for
+								every use case.
+							</div>
+						</div>
+						<div class="tab_link">
+							<div class="link_header">
+								<div class="link_icon">
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M12.8768 16.1682C13.0292 15.7535 13.6375 15.7535 13.7899 16.1682L14.2066 17.3023C14.2554 17.435 14.3637 17.5395 14.5013 17.5865L15.6774 17.9884C16.1075 18.1353 16.1075 18.7218 15.6774 18.8688L14.5013 19.2706C14.3637 19.3177 14.2554 19.4221 14.2066 19.5549L13.7899 20.6889C13.6375 21.1037 13.0292 21.1037 12.8768 20.6889L12.4601 19.5549C12.4113 19.4221 12.303 19.3177 12.1653 19.2706L10.9892 18.8688C10.5591 18.7218 10.5591 18.1353 10.9892 17.9884L12.1653 17.5865C12.303 17.5395 12.4113 17.435 12.4601 17.3023L12.8768 16.1682Z"
+											stroke="#AAABB2"
+											stroke-width="1.5"
+											stroke-linejoin="round"
+										/>
+										<path
+											d="M14.6394 3.47278C14.8711 2.84241 15.7956 2.84241 16.0272 3.47278L16.8211 5.63332C16.8953 5.8351 17.0599 5.99384 17.2691 6.06534L19.5097 6.83089C20.1634 7.05426 20.1634 7.94574 19.5097 8.16911L17.2691 8.93466C17.0599 9.00616 16.8953 9.1649 16.8211 9.36668L16.0272 11.5272C15.7956 12.1576 14.8711 12.1576 14.6394 11.5272L13.8455 9.36668C13.7714 9.1649 13.6068 9.00616 13.3975 8.93466L11.157 8.16911C10.5032 7.94574 10.5032 7.05426 11.157 6.83089L13.3975 6.06534C13.6068 5.99384 13.7714 5.8351 13.8455 5.63332L14.6394 3.47278Z"
+											stroke="#AAABB2"
+											stroke-width="1.5"
+											stroke-linejoin="round"
+										/>
+										<path
+											d="M6.48641 9.36289C6.65786 8.87904 7.34214 8.87904 7.51358 9.36289L7.9824 10.686C8.03728 10.8409 8.15913 10.9627 8.31401 11.0176L9.63711 11.4864C10.121 11.6579 10.121 12.3421 9.63711 12.5136L8.31401 12.9824C8.15913 13.0373 8.03728 13.1591 7.9824 13.314L7.51358 14.6371C7.34214 15.121 6.65786 15.121 6.48641 14.6371L6.0176 13.314C5.96272 13.1591 5.84087 13.0373 5.68599 12.9824L4.36289 12.5136C3.87904 12.3421 3.87904 11.6579 4.36289 11.4864L5.68599 11.0176C5.84087 10.9627 5.96272 10.8409 6.0176 10.686L6.48641 9.36289Z"
+											stroke="#AAABB2"
+											stroke-width="1.5"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</div>
+								<div class="link_title">Generate</div>
+							</div>
+							<div class="link_description">
+								AI such as Midjourney and ChatGPT will be your №1 assistant in
+								creating content.
+							</div>
+						</div>
+						<div class="tab_link">
+							<div class="link_header">
+								<div class="link_icon">
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clip-path="url(#clip0_184_1422)">
+											<path
+												d="M11.9906 22.2854C18.5674 22.2854 22.267 18.5859 22.267 12.0091C22.267 5.43219 18.5674 1.7327 11.9906 1.7327C5.41371 1.7327 1.71423 5.43219 1.71423 12.0091C1.71423 18.5859 5.41371 22.2854 11.9906 22.2854Z"
+												fill="white"
+												fill-opacity="0.05"
+											/>
+											<path
+												d="M11.9906 22.2854C5.41371 22.2854 1.71423 18.5859 1.71423 12.0091C1.71423 5.43219 5.41371 1.7327 11.9906 1.7327"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+											<path
+												d="M10.3465 6.83643C7.96054 7.3779 6.64697 9.18227 6.64697 12.0083C6.64697 14.7564 7.88908 16.5384 10.1515 17.1325"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+											<path
+												d="M14.0459 19.2017L17.0354 22.2847C18.4421 18.2436 19.6136 16.4705 22.267 14.0636"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+											<path
+												d="M11.9906 12.0083L15.552 8.44693"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+											<path
+												d="M15.5506 8.4499L15.3373 7.75808C14.9628 6.54378 15.2906 5.22195 16.1892 4.32337L18.7977 1.71469L19.6199 4.38051L22.2858 5.20261L19.6771 7.81124C18.7787 8.70983 17.4568 9.03771 16.2424 8.66322L15.5506 8.4499Z"
+												fill="white"
+												fill-opacity="0.05"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_184_1422">
+												<rect width="24" height="24" fill="white" />
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="link_title">Work</div>
+							</div>
+							<div class="link_description">
+								Lorem ipsum dolor sit amet consectetur. Est tincidunt quam at
+								donec. Adipiscing.
+							</div>
+						</div>
+						<div class="tab_link">
+							<div class="link_header">
+								<div class="link_icon">
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clip-path="url(#clip0_184_1433)">
+											<path
+												d="M17.3026 1.83984C19.2881 2.11749 20.3528 2.37563 22.1602 3.01795C21.9032 4.91874 21.6449 5.98355 20.9822 7.87557"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+											<path
+												d="M21.3492 3.44214C21.3492 3.44214 15.5874 7.04768 11.5714 8.66288C8.05765 10.0761 2.27258 11.4166 2.27258 11.4166"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+											<path
+												d="M8.15195 22.5927H2.94247C2.08044 22.5927 1.34304 21.9526 1.30199 21.0915C1.27317 20.4867 1.27474 19.8842 1.30672 19.2792C1.35003 18.4596 2.02663 17.8308 2.84666 17.796C4.19902 17.7387 5.38793 17.7387 6.7403 17.796C7.56033 17.8308 8.23692 18.4596 8.28024 19.2792C8.33854 20.3823 8.29577 21.4771 8.15195 22.5927Z"
+												fill="white"
+												fill-opacity="0.05"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linejoin="round"
+											/>
+											<path
+												d="M15.1761 22.5928H8.4592C8.2918 20.4547 8.26129 18.3633 8.36766 16.2423C8.40906 15.4166 9.05588 14.7501 9.88058 14.6928C11.2257 14.5993 12.4096 14.5993 13.7547 14.6928C14.5794 14.7501 15.2262 15.4166 15.2676 16.2423C15.374 18.3633 15.3435 20.4547 15.1761 22.5928Z"
+												fill="white"
+												fill-opacity="0.05"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linejoin="round"
+											/>
+											<path
+												d="M20.5788 22.5927H15.4831C15.3045 19.3934 15.2817 16.2688 15.4148 13.0886C15.4489 12.275 16.0612 11.5982 16.8716 11.5181C18.2413 11.3827 19.4419 11.3827 20.8116 11.5181C21.6219 11.5982 22.2343 12.275 22.2684 13.0886C22.3789 15.7303 22.3819 18.3336 22.2773 20.9732C22.2413 21.8822 21.4884 22.5927 20.5788 22.5927Z"
+												fill="white"
+												fill-opacity="0.05"
+												stroke="#AAABB2"
+												stroke-width="1.71429"
+												stroke-linejoin="round"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_184_1433">
+												<rect width="24" height="24" fill="white" />
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="link_title">Report</div>
+							</div>
+							<div class="link_description">
+								Monitor your students' stats, give them new assignments, receive
+								and send feedback
+							</div>
+						</div>
+					</div>
+					<div class="tab_contents">
+						<div class="content_box">
+							<div class="content_item flex_column">
+								<div class="content_categorys">
+									<div class="category_item">EngagingContent</div>
+									<div class="category_item">Education</div>
+									<div class="category_item">InteractiveLearning</div>
+								</div>
+								<div class="tab_content">
+									<div class="content_img">
+										<img src="assets/image/Preview1.png" alt="Preview" />
+									</div>
+									<div class="content_text">
+										<span class="text_title">
+											From Ideas to Impact: Crafting...
+										</span>
+										<div class="text_descr">
+											Crafting educational content requires a blend of expertise
+											and creativity. It's about presenting information in a way
+											that engages learners and fosters understanding. From
+											videos and interactive modules to written guides, every
+											element must be meticulously designed to facilitate
+											effective learning and knowledge retention.
+										</div>
+									</div>
+								</div>
+								<div class="content_bottom">
+									<div class="bottom_img">
+										<img src="assets/icons/team-icon.svg" alt="icon" />
+									</div>
+									<span class="bottom_span">Cogent Team</span>
+									<button class="btn bottom_btn">
+										<span class="play_span">Play</span>
+										<img src="assets/icons/arrow-circle.svg" alt="" />
+									</button>
+								</div>
+							</div>
+							<div class="content_item flex_column">
+								<div class="content_categorys">
+									<div class="category_item">StudentEngagement</div>
+									<div class="category_item">EducationalTechnology</div>
+								</div>
+								<div class="tab_content">
+									<div class="content_img">
+										<img src="assets/image/Preview2.png" alt="Preview1" />
+									</div>
+									<div class="content_text">
+										<span class="text_title">
+											Unlocking Learning Potential: T...
+										</span>
+										<div class="text_descr">
+											Educational content creation is a dynamic process that
+											involves research, planning, and execution. It's not just
+											about delivering information but also about creating
+											meaningful experiences for learners. Whether it's
+											developing courses, producing videos, or designing
+											quizzes, each element plays a crucial role in shaping the
+											learning journey.
+										</div>
+									</div>
+								</div>
+								<div class="content_bottom">
+									<div class="bottom_img">
+										<img src="assets/icons/team-icon.svg" alt="icon" />
+									</div>
+									<span class="bottom_span">Cogent Team</span>
+									<button class="btn bottom_btn">
+										<span class="play_span">Play</span>
+										<img src="assets/icons/arrow-circle.svg" alt="arrow" />
+									</button>
+								</div>
+							</div>
+							<div class="content_item flex_column">
+								<div class="content_categorys">
+									<div class="category_item">EdTech</div>
+									<div class="category_item">DigitalLearning</div>
+									<div class="category_item">Study</div>
+								</div>
+								<div class="tab_content">
+									<div class="content_img">
+										<img src="assets/image/Preview3.png" alt="Preview" />
+									</div>
+									<div class="content_text">
+										<span class="text_title"
+											>Innovative Approaches to Educ...</span
+										>
+										<div class="text_descr">
+											Effective educational content goes beyond mere
+											presentation; it involves storytelling, interactivity, and
+											accessibility. It's about creating an immersive learning
+											environment where learners are actively engaged and
+											motivated to explore. From incorporating multimedia
+											elements to utilizing innovative teaching methods, every
+											aspect contributes to a richer and more impactful
+											educational experience.
+										</div>
+									</div>
+								</div>
+								<div class="content_bottom">
+									<div class="bottom_img">
+										<img src="assets/icons/team-icon.svg" alt="icon" />
+									</div>
+									<span class="bottom_span">Cogent Team</span>
+									<button class="btn bottom_btn">
+										<span class="play_span">Play</span>
+										<img src="assets/icons/arrow-circle.svg" alt="" />
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="started flex_column">
+				<div class="started_wrap">
+					<div class="started_content flex_column">
+						<div class="started_title">Ready to get started?</div>
+						<div class="started_text">
+							Explore thousands of free and paid gears to jump-start your next
+							big idea.
+						</div>
+					</div>
+					<button class="btn started_btn">
+						<span class="started_span">Start now</span>
+						<img src="assets/icons/sign-up.svg" alt="" />
+					</button>
+				</div>
+			</section>
+			<footer>
+				<div class="copyright_wrap flex_column">
+					<div class="logo">
+						<a href="#">
+							<img src="./assets/icons/Logos.svg" alt="COGENT" />
+						</a>
+					</div>
+					<p class="footer_text">The new generation of learning</p>
+					<p class="footer_text">
+						© Copyright 2024 Cogent. All Rights Reserved
+					</p>
+				</div>
+				<nav class="footer_nav">
+					<div class="nav_content flex_column">
+						<h6 class="nav_title">About</h6>
+						<ul class="footer_list">
+							<li class="footer_link"><a href="#">What is Cogent</a></li>
+							<li class="footer_link"><a href="#">Privacy Policy</a></li>
+							<li class="footer_link"><a href="#">Terms of Service</a></li>
+						</ul>
+					</div>
+					<div class="nav_content flex_column">
+						<h6 class="nav_title">Product</h6>
+						<ul class="footer_list">
+							<li class="footer_link"><a href="#">Documentation</a></li>
+							<li class="footer_link"><a href="#">Help Center</a></li>
+						</ul>
+					</div>
+				</nav>
+			</footer>
+		</div>
+		<script type="module" defer src="./js/main.js"></script>
+	</body>
 </html>
