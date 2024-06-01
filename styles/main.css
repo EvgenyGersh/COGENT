@@ -25,10 +25,10 @@ body {
 	min-height: 100%;
 	max-width: 1980px;
 	/* background: #1e1e2c; */
-	background: #1e1e2c url('../assets/image/bg-body.png');
+	background: #1e1e2c url('../assets/image/1440.png');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: 8% 0;
+	background-position: 0 0;
 	font-family: 'Plus Jakarta Sans', sans-serif;
 	font-weight: 400;
 	font-style: normal;
@@ -58,6 +58,10 @@ body {
 
 .btn:hover {
 	background: #5b00d0;
+}
+
+.btn:active {
+	background: #590dbd;
 }
 
 .btn span {
@@ -110,6 +114,7 @@ section {
 	text-align: center;
 	color: rgba(255, 255, 255, 0.6);
 }
+
 /* ----------- HEADER ------------- */
 
 header {
@@ -290,13 +295,14 @@ video {
 }
 
 .tab_links {
+	height: 100%;
 	display: flex;
 	justify-content: space-between;
 	gap: 36px;
 }
 
 .tab_link {
-	transition: all 0.8s ease-in-out;
+	display: block;
 }
 
 .tab_link:hover {
@@ -349,6 +355,7 @@ video {
 	font-size: 24px;
 	line-height: 28px;
 	margin-left: 8px;
+	cursor: pointer;
 	color: rgba(255, 255, 255, 0.6);
 	transition: all 0.8s ease-in-out;
 }
@@ -435,6 +442,11 @@ video {
 	height: 64px;
 	overflow-y: auto;
 	margin-top: 5px;
+	scrollbar-width: none;
+}
+
+.text_descr:-webkit-scrollbar {
+	display: none;
 }
 
 .content_bottom {
@@ -604,4 +616,27 @@ footer {
 
 .footer_link_active {
 	color: #fff;
+}
+
+.show {
+	display: flex;
+}
+
+.hide {
+	display: none;
+}
+
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0.1;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
