@@ -378,6 +378,16 @@ video {
 }
 
 .tab_link_active {
+	.icon {
+		opacity: 0;
+		z-index: 0;
+		visibility: hidden;
+	}
+	.icon_active {
+		opacity: 1;
+		z-index: 1;
+		visibility: visible;
+	}
 	.link_title {
 		color: #fff;
 	}
