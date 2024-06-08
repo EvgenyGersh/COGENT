@@ -2,6 +2,9 @@ window.addEventListener('DOMContentLoaded', function () {
 	const tabs = document.querySelectorAll('.link_title')
 	const tabsContent = document.querySelectorAll('.content_box')
 	const tabsLink = document.querySelectorAll('.tab_link')
+	const mobileTabs = document.querySelectorAll('.mobile_content')
+	const screenWidth = document.documentElement.clientWidth
+	console.log(mobileTabs)
 
 	function hideTabContent() {
 		tabsContent.forEach(item => {
@@ -11,15 +14,27 @@ window.addEventListener('DOMContentLoaded', function () {
 		tabsLink.forEach(item => {
 			item.classList.remove('tab_link_active')
 		})
+		mobileTabs.forEach(item => {
+			item.classList.add('mobile_content')
+			item.classList.remove('mobile_content_active')
+		})
 	}
 
-	function showTabContent(i = 0) {
+	function showTabContent(i) {
 		tabsContent[i].classList.add('show', 'fade')
 		tabsContent[i].classList.remove('hide')
 		tabsLink[i].classList.add('tab_link_active')
 	}
-	hideTabContent()
-	showTabContent()
+
+	function showMobileContent(i) {
+		mobileTabs[i].classList.add('mobile_content_active', 'fade')
+		mobileTabs[i].classList.remove('mobile_content')
+		tabsLink[i].classList.add('tab_link_active')
+	}
+
+	hideTabContent(0)
+	showTabContent(0)
+	// showMobileContent()
 
 	tabs.forEach(item => {
 		item.addEventListener('click', event => {
@@ -27,10 +42,60 @@ window.addEventListener('DOMContentLoaded', function () {
 
 			tabs.forEach((item, i) => {
 				if (target === item) {
-					hideTabContent()
-					showTabContent(i)
+					if (screenWidth > 700) {
+						hideTabContent()
+						showTabContent(i)
+					} else {
+						hideTabContent()
+						showMobileContent(i)
+					}
 				}
 			})
 		})
+	})
+
+	const nav = document.querySelector('header')
+	let prevScrollpos = window.pageYOffset
+
+	window.addEventListener('scroll', () => {
+		let currentScrollPos = window.pageYOffset
+
+		if (prevScrollpos < currentScrollPos) {
+			nav.classList.add('hide_head')
+		} else {
+			nav.classList.remove('hide_head')
+		}
+		prevScrollpos = currentScrollPos
+	})
+
+	const mobile = document.querySelector('.hidden_mnu')
+	const mobileOpenBtn = document.querySelector('.burger')
+	const mobileCloseBtn = document.querySelector('.close')
+
+	mobileOpenBtn.addEventListener('click', () => {
+		mobile.classList.add('show_mobile', 'fade')
+		mobile.classList.remove('hide_mobile')
+		document.body.style.overflow = 'hidden'
+	})
+
+	const closeMobile = () => {
+		setTimeout(() => {
+			mobile.classList.add('hide_mobile', 'fade')
+			mobile.classList.remove('show_mobile')
+			document.body.style.overflow = ''
+		}, 500)
+	}
+
+	mobileCloseBtn.addEventListener('click', closeMobile)
+	mobile.addEventListener('click', e => {
+		if (e.target === mobile) {
+			closeMobile()
+		}
+	})
+
+	document.addEventListener('keydown', e => {
+		if (e.code === 'Escape' && mobile.classList.contains('show_mobile')) {
+			closeMobile()
+		}
 	})
 })
