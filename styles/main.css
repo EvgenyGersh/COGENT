@@ -52,6 +52,24 @@ body {
 	}
 }
 
+@media (max-width: 1025px) {
+	body {
+		background-position: 23% 0%;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		background-position: 32% 0%;
+	}
+}
+
+@media (max-width: 430px) {
+	body {
+		background: #1e1e2c;
+	}
+}
+
 .btn {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -188,6 +206,7 @@ header {
 }
 
 .header_link a {
+	display: inline-block;
 	font-weight: 700;
 	font-size: 15px;
 	line-height: 20px;
@@ -200,8 +219,7 @@ header {
 .header_link a:hover {
 	color: rgba(255, 255, 255, 1);
 }
-
-.header_link-active {
+.header_link a.active {
 	color: rgba(255, 255, 255, 1);
 }
 
@@ -1578,6 +1596,10 @@ footer {
 
 .hide_link:hover {
 	color: #fff;
+}
+
+.hide_link a.active {
+	color: rgba(255, 255, 255, 1);
 }
 
 @media (max-width: 430px) {

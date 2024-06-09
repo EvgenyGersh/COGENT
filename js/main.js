@@ -105,16 +105,26 @@ window.addEventListener('DOMContentLoaded', function () {
 	})
 
 	const activeLinks = document.querySelectorAll('a[href^="#"]')
+	const lnk = document.querySelectorAll('.header_link a')
+	const lnkHide = document.querySelectorAll('.hide_link a')
+	activeLinks.forEach((item, i) => {
+		item.addEventListener('click', e => {
+			event.preventDefault()
+			const blockId = item.getAttribute('href')
 
-	for (activeLink of activeLinks) {
-		activeLink.addEventListener('click', function (e) {
-			e.preventDefault()
-			const blockId = activeLink.getAttribute('href').substr(1)
-			document.getElementById(blockId).scrollIntoView({
+			document.querySelector('' + blockId).scrollIntoView({
 				behavior: 'smooth',
 				block: 'start',
 			})
-			activeLink.classList.add('active_link')
+			console.log(item)
+			lnk.forEach(elem => {
+				elem.classList.remove('active')
+			})
+			lnkHide.forEach(elem => {
+				elem.classList.remove('active')
+			})
+			item.classList.add('active')
+			closeMobile()
 		})
-	}
+	})
 })
