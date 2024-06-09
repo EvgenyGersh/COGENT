@@ -108,6 +108,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	const activeLinks = document.querySelectorAll('a[href^="#"]')
 	const lnk = document.querySelectorAll('.header_link a')
 	const lnkHide = document.querySelectorAll('.hide_link a')
+	const footerLink = document.querySelectorAll('.footer_link a')
 	activeLinks.forEach((item, i) => {
 		item.addEventListener('click', e => {
 			event.preventDefault()
@@ -117,11 +118,14 @@ window.addEventListener('DOMContentLoaded', function () {
 				behavior: 'smooth',
 				block: 'start',
 			})
-			console.log(item)
+
 			lnk.forEach(elem => {
 				elem.classList.remove('active')
 			})
 			lnkHide.forEach(elem => {
+				elem.classList.remove('active')
+			})
+			footerLink.forEach(elem => {
 				elem.classList.remove('active')
 			})
 			item.classList.add('active')
