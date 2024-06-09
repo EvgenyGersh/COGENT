@@ -817,7 +817,9 @@ video {
 	height: 0;
 	opacity: 0;
 	visibility: hidden;
-	display: none;
+	/* display: none; */
+	display: flex;
+	/* transition: all 0.5s ease-in-out; */
 }
 
 .mobile_content_active {
@@ -835,6 +837,7 @@ video {
 	display: flex;
 	scrollbar-width: none;
 	margin-top: 18px;
+	transition: opacity 0.8s ease-in-out;
 	&::-webkit-scrollbar {
 		display: none;
 	}
@@ -1532,14 +1535,20 @@ footer {
 	background-size: cover;
 	background-position: 0% 0;
 	z-index: 999;
-	-webkit-transition: all 0.8s ease;
-	-o-transition: all 0.8s ease;
-	transition: all 0.8s ease;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
 
-/* .hidden_mnu_active {
-	display: block;
-} */
+.show_mobile {
+	opacity: 1;
+	visibility: visible;
+}
+
+.hide_mobile {
+	opacity: 0;
+	visibility: hidden;
+}
 
 .hide_header {
 	display: -webkit-box;
@@ -1614,27 +1623,19 @@ footer {
 
 /* --------Animation------- */
 .show {
-	display: -webkit-box;
+	/* display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex;
+	display: flex; */
 	opacity: 1;
 	visibility: visible;
+	height: 100%;
 }
 
 .hide {
-	display: none;
+	/* display: none; */
 	opacity: 0;
 	visibility: hidden;
-}
-
-.show_mobile {
-	opacity: 1;
-	visibility: visible;
-}
-
-.hide_mobile {
-	opacity: 0;
-	visibility: hidden;
+	height: 0;
 }
 
 .fade {

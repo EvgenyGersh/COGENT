@@ -23,13 +23,14 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function showTabContent(i) {
 		tabsContent[i].classList.add('show', 'fade')
-		tabsContent[i].classList.remove('hide')
+		tabsContent[i].classList.remove('hide', 'fade_off')
 		tabsLink[i].classList.add('tab_link_active')
 	}
 
 	function showMobileContent(i) {
-		mobileTabs[i].classList.add('mobile_content_active', 'fade')
+		mobileTabs[i].classList.add('mobile_content_active')
 		mobileTabs[i].classList.remove('mobile_content')
+
 		tabsLink[i].classList.add('tab_link_active')
 	}
 
@@ -85,10 +86,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	const closeMobile = () => {
 		setTimeout(() => {
-			mobile.classList.add('hide_mobile', 'fade')
+			mobile.classList.add('hide_mobile')
 			mobile.classList.remove('show_mobile')
 			document.body.style.overflow = ''
-		}, 500)
+		}, 300)
 	}
 
 	mobileCloseBtn.addEventListener('click', closeMobile)
