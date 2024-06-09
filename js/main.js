@@ -4,7 +4,8 @@ window.addEventListener('DOMContentLoaded', function () {
 	const tabsLink = document.querySelectorAll('.tab_link')
 	const mobileTabs = document.querySelectorAll('.mobile_content')
 	const screenWidth = document.documentElement.clientWidth
-	console.log(mobileTabs)
+	let windowResize = window.innerWidth
+	console.log(windowResize)
 
 	function hideTabContent() {
 		tabsContent.forEach(item => {
@@ -32,9 +33,13 @@ window.addEventListener('DOMContentLoaded', function () {
 		tabsLink[i].classList.add('tab_link_active')
 	}
 
-	hideTabContent(0)
-	showTabContent(0)
-	// showMobileContent()
+	if (screenWidth > 700) {
+		hideTabContent(0)
+		showTabContent(0)
+	} else {
+		hideTabContent(0)
+		showMobileContent(0)
+	}
 
 	tabs.forEach(item => {
 		item.addEventListener('click', event => {
@@ -98,4 +103,18 @@ window.addEventListener('DOMContentLoaded', function () {
 			closeMobile()
 		}
 	})
+
+	const activeLinks = document.querySelectorAll('a[href^="#"]')
+
+	for (activeLink of activeLinks) {
+		activeLink.addEventListener('click', function (e) {
+			e.preventDefault()
+			const blockId = activeLink.getAttribute('href').substr(1)
+			document.getElementById(blockId).scrollIntoView({
+				behavior: 'smooth',
+				block: 'start',
+			})
+			activeLink.classList.add('active_link')
+		})
+	}
 })
