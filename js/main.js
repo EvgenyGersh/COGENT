@@ -4,8 +4,6 @@ window.addEventListener('DOMContentLoaded', function () {
 	const tabsLink = document.querySelectorAll('.tab_link')
 	const mobileTabs = document.querySelectorAll('.mobile_content')
 	const screenWidth = document.documentElement.clientWidth
-	let windowResize = window.innerWidth
-	console.log(windowResize)
 
 	function hideTabContent() {
 		tabsContent.forEach(item => {
@@ -60,18 +58,65 @@ window.addEventListener('DOMContentLoaded', function () {
 		})
 	})
 
-	const nav = document.querySelector('header')
-	let prevScrollpos = window.pageYOffset
+	// const container = document.querySelector('body')
+
+	// const observer = new ResizeObserver(item => {
+	// 	let containerWidth = Math.ceil(item[0].contentRect.width)
+
+	// 	if (containerWidth > 700) {
+	// 		hideTabContent(0)
+	// 		showTabContent(0)
+	// 	} else {
+	// 		hideTabContent(0)
+	// 		showMobileContent(0)
+	// 	}
+	// 	tabs.forEach(item => {
+	// 		item.addEventListener('click', event => {
+	// 			const target = event.target
+
+	// 			tabs.forEach((item, i) => {
+	// 				if (target === item) {
+	// 					if (containerWidth > 700) {
+	// 						hideTabContent()
+	// 						showTabContent(i)
+	// 					} else {
+	// 						hideTabContent()
+	// 						showMobileContent(i)
+	// 					}
+	// 				}
+	// 			})
+	// 		})
+	// 	})
+	// })
+	// observer.observe(container)
+
+	// const nav = document.querySelector('.header_wrap')
+	// let prevScrollpos = window.pageYOffset
+
+	// window.addEventListener('scroll', () => {
+	// 	let currentScrollPos = window.pageYOffset
+
+	// 	if (prevScrollpos < currentScrollPos) {
+	// 		nav.classList.add('hide_head')
+	// 	} else {
+	// 		nav.classList.remove('hide_head')
+	// 	}
+	// 	prevScrollpos = currentScrollPos
+	// 	// console.log(prevScrollpos)
+	// 	// console.log(currentScrollPos)
+	// })
+
+	const nav = document.querySelector('.header_wrap')
+	let lastScroll = 0
 
 	window.addEventListener('scroll', () => {
-		let currentScrollPos = window.pageYOffset
-
-		if (prevScrollpos < currentScrollPos) {
+		let scrollTop = window.pageYOffset || document.documentElement.scrollTop
+		if (scrollTop > lastScroll) {
 			nav.classList.add('hide_head')
 		} else {
 			nav.classList.remove('hide_head')
 		}
-		prevScrollpos = currentScrollPos
+		lastScroll = scrollTop
 	})
 
 	const mobile = document.querySelector('.hidden_mnu')
