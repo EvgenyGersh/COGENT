@@ -878,7 +878,7 @@ video {
 
 .mobile_content {
 	width: 100%;
-	gap: 24px;
+	/* gap: 24px; */
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
@@ -893,7 +893,7 @@ video {
 
 .mobile_content_active {
 	width: 100%;
-	gap: 24px;
+	/* gap: 24px; */
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
@@ -996,7 +996,7 @@ video {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	gap: 24px;
+	/* gap: 24px; */
 }
 
 .content_item {
@@ -1008,6 +1008,11 @@ video {
 	border-radius: 32px;
 	background: #2f3048;
 	padding: 24px;
+	margin-right: 24px;
+}
+
+.content_item:last-child {
+	margin-right: 0;
 }
 
 .content_categorys {
