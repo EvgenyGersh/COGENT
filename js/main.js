@@ -12,9 +12,10 @@ window.addEventListener('DOMContentLoaded', function () {
 		})
 		tabsLink.forEach(item => {
 			item.classList.remove('tab_link_active')
+			item.classList.add('tab_link')
 		})
 		mobileTabs.forEach(item => {
-			item.classList.add('mobile_content')
+			// item.classList.add('mobile_content')
 			item.classList.remove('mobile_content_active')
 		})
 	}
@@ -27,84 +28,68 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function showMobileContent(i) {
 		mobileTabs[i].classList.add('mobile_content_active')
-		mobileTabs[i].classList.remove('mobile_content')
-
+		// mobileTabs[i].classList.remove('mobile_content')
 		tabsLink[i].classList.add('tab_link_active')
 	}
 
-	if (screenWidth > 700) {
-		hideTabContent(0)
-		showTabContent(0)
-	} else {
-		hideTabContent(0)
-		showMobileContent(0)
-	}
+	// if (screenWidth > 700) {
+	// 	hideTabContent()
+	// 	showTabContent(0)
+	// } else {
+	// 	hideTabContent()
+	// 	showMobileContent(0)
+	// }
 
-	tabs.forEach(item => {
-		item.addEventListener('click', event => {
-			const target = event.target
+	// tabs.forEach(item => {
+	// 	item.addEventListener('click', event => {
+	// 		const target = event.target
 
-			tabs.forEach((item, i) => {
-				if (target === item) {
-					if (screenWidth > 700) {
-						hideTabContent()
-						showTabContent(i)
-					} else {
-						hideTabContent()
-						showMobileContent(i)
-					}
-				}
-			})
-		})
-	})
-
-	// const container = document.querySelector('body')
-
-	// const observer = new ResizeObserver(item => {
-	// 	let containerWidth = Math.ceil(item[0].contentRect.width)
-
-	// 	if (containerWidth > 700) {
-	// 		hideTabContent(0)
-	// 		showTabContent(0)
-	// 	} else {
-	// 		hideTabContent(0)
-	// 		showMobileContent(0)
-	// 	}
-	// 	tabs.forEach(item => {
-	// 		item.addEventListener('click', event => {
-	// 			const target = event.target
-
-	// 			tabs.forEach((item, i) => {
-	// 				if (target === item) {
-	// 					if (containerWidth > 700) {
-	// 						hideTabContent()
-	// 						showTabContent(i)
-	// 					} else {
-	// 						hideTabContent()
-	// 						showMobileContent(i)
-	// 					}
+	// 		tabs.forEach((item, i) => {
+	// 			if (target === item) {
+	// 				if (screenWidth > 700) {
+	// 					hideTabContent()
+	// 					showTabContent(i)
+	// 				} else {
+	// 					hideTabContent()
+	// 					showMobileContent(i)
 	// 				}
-	// 			})
+	// 			}
 	// 		})
 	// 	})
 	// })
-	// observer.observe(container)
 
-	// const nav = document.querySelector('.header_wrap')
-	// let prevScrollpos = window.pageYOffset
+	const container = document.querySelector('body')
 
-	// window.addEventListener('scroll', () => {
-	// 	let currentScrollPos = window.pageYOffset
+	const observer = new ResizeObserver(item => {
+		let containerWidth = Math.ceil(item[0].contentRect.width)
 
-	// 	if (prevScrollpos < currentScrollPos) {
-	// 		nav.classList.add('hide_head')
-	// 	} else {
-	// 		nav.classList.remove('hide_head')
-	// 	}
-	// 	prevScrollpos = currentScrollPos
-	// 	// console.log(prevScrollpos)
-	// 	// console.log(currentScrollPos)
-	// })
+		if (containerWidth > 700) {
+			hideTabContent()
+			showTabContent(0)
+		} else {
+			hideTabContent()
+			showMobileContent(0)
+		}
+
+		tabs.forEach(item => {
+			item.addEventListener('click', event => {
+				const target = event.target
+
+				tabs.forEach((item, i) => {
+					if (target === item) {
+						if (containerWidth > 700) {
+							hideTabContent()
+							showTabContent(i)
+						} else {
+							hideTabContent()
+							showMobileContent(i)
+						}
+					}
+				})
+			})
+		})
+	})
+	observer.observe(container)
 
 	const nav = document.querySelector('.header_wrap')
 	let lastScroll = 0
