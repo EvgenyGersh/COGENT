@@ -856,6 +856,28 @@ video {
 	}
 } */
 
+@media (hover: hover) {
+	.tab_link:hover .icon {
+		opacity: 0;
+		z-index: 0;
+		visibility: hidden;
+	}
+
+	.tab_link:hover .icon_active {
+		opacity: 1;
+		z-index: 1;
+		visibility: visible;
+	}
+
+	.tab_link:hover .link_title {
+		color: #fff;
+	}
+
+	.tab_link:hover .link_description {
+		color: #fff;
+	}
+}
+
 .tab_link_active .icon {
 	opacity: 0;
 	z-index: 0;
