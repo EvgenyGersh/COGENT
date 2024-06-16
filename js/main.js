@@ -12,8 +12,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		})
 		tabsLink.forEach(item => {
 			item.classList.remove('tab_link_active')
-
-			item.classList.add('tab_link_nohover')
+			item.classList.add('tab_link')
 		})
 		mobileTabs.forEach(item => {
 			// item.classList.add('mobile_content')
