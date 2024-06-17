@@ -15,7 +15,6 @@ window.addEventListener('DOMContentLoaded', function () {
 			item.classList.add('tab_link')
 		})
 		mobileTabs.forEach(item => {
-			// item.classList.add('mobile_content')
 			item.classList.remove('mobile_content_active')
 		})
 	}
@@ -28,35 +27,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function showMobileContent(i) {
 		mobileTabs[i].classList.add('mobile_content_active')
-		// mobileTabs[i].classList.remove('mobile_content')
 		tabsLink[i].classList.add('tab_link_active')
 	}
-
-	// if (screenWidth > 700) {
-	// 	hideTabContent()
-	// 	showTabContent(0)
-	// } else {
-	// 	hideTabContent()
-	// 	showMobileContent(0)
-	// }
-
-	// tabs.forEach(item => {
-	// 	item.addEventListener('click', event => {
-	// 		const target = event.target
-
-	// 		tabs.forEach((item, i) => {
-	// 			if (target === item) {
-	// 				if (screenWidth > 700) {
-	// 					hideTabContent()
-	// 					showTabContent(i)
-	// 				} else {
-	// 					hideTabContent()
-	// 					showMobileContent(i)
-	// 				}
-	// 			}
-	// 		})
-	// 	})
-	// })
 
 	const container = document.querySelector('body')
 
